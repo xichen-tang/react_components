@@ -1,0 +1,59 @@
+.carousel {
+  position: absolute;
+  right: 2rem;
+}
+
+.__active {
+  height: 5rem;
+}
+
+.alice-carousel__wrapper {
+  padding-top: 1rem;
+}
+
+span {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.grid-items {
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 70%;
+  }
+
+  .normal {
+    margin-top: 23px;
+    font-size: 1.25rem;
+  }
+
+  .selected {
+    font-size: 2.5rem;
+  }
+  .the {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel {
+    width: 60%;
+  }
+  .normal {
+    font-size: 1.5rem;
+    margin-top: 42px;
+  }
+
+  .selected {
+    font-size: 3rem;
+  }
+  .the {
+    font-size: 1.5rem;
+  }
+}
