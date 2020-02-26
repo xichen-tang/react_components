@@ -30,19 +30,17 @@ export default class Carousel extends Component {
   handleWheelEvent = e => {
     e.persist();
 
-    const nextIndex =
-      e.deltaY > 0
-        ? this.state.currentIndex + 1
-        : this.state.currentIndex - 1;
+    const { currentIndex, itemsInSlide } = this.state;
 
-    const center = Math.floor(this.state.itemsInSlide / 2);
+    const nextIndex =
+      e.deltaY > 0 ? currentIndex + 1 : currentIndex - 1;
+
+    const center = Math.floor(itemsInSlide / 2);
 
     if (nextIndex >= 0 && nextIndex < this.items.length) {
-      if (this.state.currentIndex >= this.state.itemsInSlide - 1) {
+      if (currentIndex >= itemsInSlide - 1) {
         this.setState({ currentIndex: nextIndex }, () => {
-          this.carouselRef.current.slideTo(
-            this.state.currentIndex - center,
-          );
+          this.carouselRef.current.slideTo(currentIndex - center);
         });
       } else {
         this.setState({ currentIndex: nextIndex }, () => {
@@ -63,10 +61,10 @@ export default class Carousel extends Component {
     const indexOfArray = i => this.items.indexOf(i);
 
     const styleSelectedItem = i =>
-      this.state.currentIndex === i ? 'selected' : 'normal';
+      currentIndex === i ? 'selected' : 'normal';
 
     const styleSelectedTitle = i =>
-      this.state.currentIndex === i ? 'the' : 'none';
+      currentIndex === i ? 'the' : 'none';
 
     const carouselItems = this.items.map(i => (
       <div className="grid-items">
