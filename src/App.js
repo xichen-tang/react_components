@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <Carousel
-        items={['1', 2, 3, 4, 5, 6, 7, 8, 9, 'BMW', 11, 12, 13]}
+        title="THE"
+        items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]}
       />
     </div>
   );

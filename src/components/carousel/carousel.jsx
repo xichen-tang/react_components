@@ -57,20 +57,15 @@ export default class Carousel extends Component {
 
   render() {
     const { responsive, currentIndex } = this.state;
+    const { title } = this.props;
 
     const indexOfArray = i => this.items.indexOf(i);
 
     const styleSelectedItem = i =>
       currentIndex === i ? 'selected' : 'normal';
 
-    const styleSelectedTitle = i =>
-      currentIndex === i ? 'the' : 'none';
-
     const carouselItems = this.items.map(i => (
       <div className="grid-items">
-        <span className={styleSelectedTitle(indexOfArray(i))}>
-          THE
-        </span>
         <span
           key={i}
           className={styleSelectedItem(indexOfArray(i))}
@@ -84,22 +79,25 @@ export default class Carousel extends Component {
     ));
 
     return (
-      <div
-        className="carousel"
-        onWheel={e => this.handleWheelEvent(e)}
-      >
-        <AliceCarousel
-          ref={this.carouselRef}
-          infinite={false}
-          items={carouselItems}
-          responsive={responsive}
-          slideToIndex={currentIndex}
-          dotsDisabled={true}
-          buttonsDisabled={true}
-          onInitialized={this.handleOnSlideChange}
-          onResized={this.handleOnSlideChange}
-        ></AliceCarousel>
-      </div>
+      <>
+        <header className="header">{title}</header>
+        <div
+          className="carousel"
+          onWheel={e => this.handleWheelEvent(e)}
+        >
+          <AliceCarousel
+            ref={this.carouselRef}
+            infinite={false}
+            items={carouselItems}
+            responsive={responsive}
+            slideToIndex={currentIndex}
+            dotsDisabled={true}
+            buttonsDisabled={true}
+            onInitialized={this.handleOnSlideChange}
+            onResized={this.handleOnSlideChange}
+          ></AliceCarousel>
+        </div>
+      </>
     );
   }
 }

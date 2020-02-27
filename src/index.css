@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'BmwWebbo';
+  src: local('BmwWebbo'), url(./fonts/bmwtypewebbo_all.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'BmwWebli';
+  src: local('BmwWebli'), url(./fonts/bmwtypewebli_all.woff) format('woff');
+}

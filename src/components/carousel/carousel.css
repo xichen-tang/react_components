@@ -1,14 +1,15 @@
+.header {
+  font-family: 'BmwWebli';
+  margin-top: 1rem;
+}
+
 .carousel {
   position: absolute;
-  right: 2rem;
+  font-family: 'BmwWebli';
 }
 
 .__active {
   height: 5rem;
-}
-
-.alice-carousel__wrapper {
-  padding-top: 1rem;
 }
 
 span {
@@ -24,36 +25,43 @@ span {
 }
 
 @media (max-width: 768px) {
+  .header {
+    font-size: 1rem;
+  }
+
   .carousel {
     width: 70%;
+    right: 1rem;
   }
 
   .normal {
-    margin-top: 23px;
-    font-size: 1.25rem;
-  }
-
-  .selected {
-    font-size: 2.5rem;
-  }
-  .the {
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 769px) {
-  .carousel {
-    width: 60%;
-  }
-  .normal {
+    margin-top: 0.75rem;
     font-size: 1.5rem;
-    margin-top: 42px;
   }
 
   .selected {
     font-size: 3rem;
+    margin-top: -0.25rem;
   }
-  .the {
-    font-size: 1.5rem;
+}
+
+@media (min-width: 769px) {
+  .header {
+    font-size: 1.75rem;
+  }
+
+  .carousel {
+    width: 60%;
+    right: 4rem;
+  }
+
+  .normal {
+    font-size: 3.25rem;
+    margin-top: 1rem;
+  }
+
+  .selected {
+    font-size: 6.5rem;
+    margin-top: -1rem;
   }
 }
