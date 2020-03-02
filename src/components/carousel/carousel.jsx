@@ -15,16 +15,16 @@ export default class Carousel extends Component {
   carouselRef = createRef();
 
   slideToIndex = i => {
-    const center = Math.floor(this.state.itemsInSlide / 2);
+    // const center = Math.floor(this.state.itemsInSlide / 2);
 
-    if (i >= center) {
-      this.setState({ currentIndex: i }, () => {
-        this.carouselRef.current.slideTo(i - center);
-      });
-    } else
-      this.setState({ currentIndex: i }, () => {
-        this.carouselRef.current.slideTo(0);
-      });
+    // if (i >= center) {
+    this.setState({ currentIndex: i }, () => {
+      this.carouselRef.current.slideTo(i);
+    });
+    // } else
+    //   this.setState({ currentIndex: i }, () => {
+    //     this.carouselRef.current.slideTo(0);
+    //   });
   };
 
   handleWheelEvent = e => {
@@ -35,19 +35,33 @@ export default class Carousel extends Component {
     const nextIndex =
       e.deltaY > 0 ? currentIndex + 1 : currentIndex - 1;
 
-    const center = Math.floor(itemsInSlide / 2);
-
     if (nextIndex >= 0 && nextIndex < this.items.length) {
       if (currentIndex >= itemsInSlide - 1) {
         this.setState({ currentIndex: nextIndex }, () => {
-          this.carouselRef.current.slideTo(currentIndex - center);
-        });
-      } else {
-        this.setState({ currentIndex: nextIndex }, () => {
-          this.carouselRef.current.slideTo(0);
+          this.carouselRef.current.slideTo(nextIndex);
         });
       }
     }
+
+    // const center = Math.floor(itemsInSlide / 2);
+
+    // if (nextIndex >= 0 && nextIndex < this.items.length) {
+    //   if (currentIndex >= itemsInSlide - 1) {
+    //     this.setState({ currentIndex: nextIndex }, () => {
+    //       this.carouselRef.current.slideTo(currentIndex - center);
+    //     });
+    //   } else {
+    //     this.setState({ currentIndex: nextIndex }, () => {
+    //       this.carouselRef.current.slideTo(0);
+    //     });
+    //   }
+    // }
+  };
+
+  handleTouchEvent = i => {
+    this.setState({ currentIndex: i }, () => {
+      this.carouselRef.current.slideTo(i);
+    });
   };
 
   handleOnSlideChange = event => {
@@ -72,6 +86,7 @@ export default class Carousel extends Component {
           onClick={() => {
             this.slideToIndex(indexOfArray(i));
           }}
+          onTouchMove={() => this.handleTouchEvent(i)}
         >
           {i}
         </span>
@@ -91,6 +106,7 @@ export default class Carousel extends Component {
             items={carouselItems}
             responsive={responsive}
             slideToIndex={currentIndex}
+            swipeDisabled={true}
             dotsDisabled={true}
             buttonsDisabled={true}
             onInitialized={this.handleOnSlideChange}

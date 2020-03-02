@@ -51,8 +51,8 @@ span {
   }
 
   .carousel {
-    width: 60%;
-    right: 4rem;
+    width: 100%;
+    /* right: 2rem; */
   }
 
   .normal {
@@ -63,5 +63,6 @@ span {
   .selected {
     font-size: 6.5rem;
     margin-top: -1rem;
+    transition: all ease-out .5s;
   }
 }
