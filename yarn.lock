@@ -7159,9 +7159,9 @@ path-key@^3.1.0:
   integrity sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -8038,7 +8038,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8191,6 +8191,14 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-alice-carousel@^1.17.3:
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/react-alice-carousel/-/react-alice-carousel-1.19.3.tgz#dc33b431aca727d999407f1e529f522b15dc3bc2"
+  integrity sha512-FaOQ/f7C/4cBuXr2tA4YgVyVrvWI7VbccGxJpu+rCsnnUlcN0YLz+20iJ2TFCXJp9M+/FjBratUNC7vQBrMQPw==
+  dependencies:
+    prop-types "^15.5.10"
+    vanilla-swipe "1.2.0"
 
 react-app-polyfill@^1.0.6:
   version "1.0.6"
@@ -9949,6 +9957,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanilla-swipe@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vanilla-swipe/-/vanilla-swipe-1.2.0.tgz#dd36671ed8e388c6ce73e3d75dcee596f001f7a0"
+  integrity sha512-1yNnsfHcl67Y24HGJc/zrC9omRBzzxqvC6D5apOXMqGukuz0Zha1ydKJM7AUL/dB2w7Bd7UsI2Uw7+AE4soDaA==
 
 vary@~1.1.2:
   version "1.1.2"
